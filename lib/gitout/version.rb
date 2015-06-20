@@ -1,3 +1,3 @@
-module Turnout
+module Gitout
   VERSION = '1.0.0'
 end
