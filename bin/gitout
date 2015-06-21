@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'gitout'
+require 'octokit'
+
+username = ARGV[0]
+
+puts "Fetching data for #{username}..."
+
+data = Gitout.new.github(username)
+
+puts "GitHub data for '#{ARGV[0]}'"
+puts "Commits: #{data[:commits]}"
+puts "Lines of code added: #{data[:additions]}"
+puts "Lines of code deleted: #{data[:deletions]}"
