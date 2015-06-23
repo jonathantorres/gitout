@@ -1,6 +1,14 @@
 require 'octokit'
+require 'gitout/credentials'
 
 class GitHub
+
+  def initialize
+    Octokit::Client.new({
+      client_id: Credentials::CLIENT_ID,
+      client_secret: Credentials::CLIENT_SECRET
+    })
+  end
 
   # get user repositories
   def repositories(user)
