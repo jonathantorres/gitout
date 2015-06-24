@@ -3,8 +3,8 @@ require 'gitout/credentials'
 
 class GitHub
 
-  def initialize
-    Octokit::Client.new({
+  def initialize()
+    @client = Octokit::Client.new({
       client_id: Credentials::CLIENT_ID,
       client_secret: Credentials::CLIENT_SECRET
     })
@@ -12,17 +12,17 @@ class GitHub
 
   # get user repositories
   def repositories(user)
-    Octokit.repositories(user)
+    @client.repositories(user)
   end
 
   # Get user commits on a repository on a specific date
   # date format: 'Y-M-D'
   def commits(user, repository, date)
-    Octokit.commits_on("#{user}/#{repository}", date, 'master')
+    @client.commits_on("#{user}/#{repository}", date, 'master')
   end
 
   # Get single commit data
   def commit(user, repository, sha)
-    Octokit.commit("#{user}/#{repository}", sha)
+    @client.commit("#{user}/#{repository}", sha)
   end
 end
