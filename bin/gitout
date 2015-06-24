@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby
 
 require 'gitout'
+require 'gitout/github'
 require 'octokit'
 
 username = ARGV[0]
 
 puts "Fetching data for #{username}..."
 
-data = Gitout.new.github(username)
+github = GitHub.new
+gitout = Gitout.new(github, username)
+data = gitout.github
 
 puts "GitHub data for '#{ARGV[0]}'"
 puts "Commits: #{data[:commits]}"

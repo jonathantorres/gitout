@@ -2,17 +2,16 @@ require 'gitout/github'
 
 class Gitout
 
-  def initialize()
-    @github = GitHub.new
+  def initialize(github, username)
+    @github = github
+    @username = username
     @repositories = []
     @total_commits = 0
     @total_additions = 0
     @total_deletions = 0
   end
 
-  def github(username)
-    @username = username
-
+  def github()
     fetch_commits
 
     data = {
