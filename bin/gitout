@@ -1,14 +1,20 @@
 #!/usr/bin/env ruby
 
+require 'octokit'
 require 'gitout'
 require 'gitout/github'
-require 'octokit'
+require 'gitout/credentials'
 
 username = ARGV[0]
 
 puts "Fetching data for #{username}..."
 
-github = GitHub.new
+client = Octokit::Client.new({
+  client_id: Credentials::CLIENT_ID,
+  client_secret: Credentials::CLIENT_SECRET
+})
+
+github = GitHub.new(client)
 gitout = Gitout.new(github, username)
 data = gitout.github
 

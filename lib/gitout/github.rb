@@ -3,11 +3,8 @@ require 'gitout/credentials'
 
 class GitHub
 
-  def initialize()
-    @client = Octokit::Client.new({
-      client_id: Credentials::CLIENT_ID,
-      client_secret: Credentials::CLIENT_SECRET
-    })
+  def initialize(client)
+    @client = client
   end
 
   # get user repositories
