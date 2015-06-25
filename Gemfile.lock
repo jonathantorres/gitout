@@ -8,6 +8,7 @@ GEM
     multipart-post (2.0.0)
     octokit (3.8.0)
       sawyer (~> 0.6.0, >= 0.5.3)
+    rake (10.4.2)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -30,6 +31,7 @@ PLATFORMS
 
 DEPENDENCIES
   octokit (~> 3.0)
+  rake
   rspec
 
 BUNDLED WITH
