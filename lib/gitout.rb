@@ -27,7 +27,7 @@ class Gitout
   def fetch_commits
     @repositories = @github.repositories(@username)
     @repositories.each do |repository|
-      puts "Fetching commits on #{repository.name}..."
+      puts "Reading commits on #{repository.name}..."
       commits = @github.commits(@username, repository.name, Time.now.strftime("%Y-%m-%d"))
       commits.each do |commit|
         @total_commits += 1
