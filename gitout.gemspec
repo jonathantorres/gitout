@@ -6,7 +6,6 @@ require 'gitout/version'
 Gem::Specification.new do |spec|
   spec.name = 'gitout'
   spec.version = Gitout::VERSION
-  spec.summary = 'Check how much code you push to GitHub on a single day.'
   spec.description = 'Check how much code you push to GitHub on a single day.'
   spec.authors = ['Jonathan Torres']
   spec.email = 'jonathantorres41@gmail.com'
