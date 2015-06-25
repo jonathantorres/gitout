@@ -28,7 +28,7 @@ class Gitout
     @repositories = @github.repositories(@username)
     @repositories.each do |repository|
       puts "Fetching commits on #{repository.name}..."
-      commits = @github.commits(@username, repository.name, '2015-06-10')
+      commits = @github.commits(@username, repository.name, Time.now.strftime("%Y-%m-%d"))
       commits.each do |commit|
         @total_commits += 1
         commit_data = @github.commit(@username, repository.name, commit.sha)
