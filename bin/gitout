@@ -7,6 +7,11 @@ require 'gitout/credentials'
 
 username = ARGV[0]
 
+if username.nil?
+  puts "Username is required!"
+  abort
+end
+
 puts "Fetching data for #{username}..."
 
 client = Octokit::Client.new({
