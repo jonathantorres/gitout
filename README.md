@@ -1,4 +1,6 @@
 # Gitout
+[![Build Status](https://travis-ci.org/jonathantorres/gitout.svg?branch=master)](https://travis-ci.org/jonathantorres/gitout)
+
 Check how much code you pushed to GitHub so far today.
 
 ### Installation
